@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicSnap - Transforming Citizen Reporting</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font as the default sans-serif font */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom class for the hero section's pseudo-element overlay */
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Title -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white">CivicSnap</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#problem" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">The Problem</a>
+                        <a href="#solution" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Solution</a>
+                        <a href="#how-it-works" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">How It Works</a>
+                        <a href="#features" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="#roadmap" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Roadmap</a>
+                        <a href="#team" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Close icon (hidden by default) -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
+                <a href="#problem" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">The Problem</a>
+                <a href="#solution" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Solution</a>
+                <a href="#how-it-works" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">How It Works</a>
+                <a href="#features" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Features</a>
+                <a href="#roadmap" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Roadmap</a>
+                <a href="#team" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Team</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section (Slide 1) -->
+        <section id="hero" class="relative bg-gray-800 hero-overlay" style="background-image: url('https://placehold.co/1600x900/2D3748/FFFFFF?text=CivicSnap+Cityscape'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+                    CivicSnap
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl text-gray-200 drop-shadow-md">
+                    Transforming Citizen Reporting through AI-Powered Solutions
+                </p>
+                <p class="mt-2 text-lg md:text-xl text-gray-300 drop-shadow-md">
+                    Bonded for a better Homeland
+                </p>
+                <a href="#about" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors">
+                    Learn More
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section (Slide 3) -->
+        <section id="about" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            What is CivicSnap?
+                        </h2>
+                        <p class="mt-6 text-xl text-gray-300">
+                            CivicSnap is a mobile app that bridge the reporting gaps and bonds citizens, authorities, and volunteers onto a single, trusted platform.
+                        </p>
+                        <p class="mt-4 text-lg text-gray-400">
+                            By sharing real-time reports and alerts, we build a connected community dedicated to mutual safety and civic accountability for a better homeland.
+                        </p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 grid grid-cols-2 gap-4">Community 
+                        <img class="rounded-lg shadow-lg" src="https://static01.nyt.com/images/2024/12/20/multimedia/00bangladesh-transition-08-ghfj/00bangladesh-transition-08-ghfj-articleLarge.jpg?quality=75&auto=webp&disable=upscalea" alt="straeet event" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                        <img class="rounded-lg shadow-lg" src="https://www.shutterstock.com/image-photo/dhaka-skyline-birds-eye-view-600nw-1134436058.jpg" alt="Modern city architecture" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section (Slides 4-8) -->
+        <section id="problem" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        The Problem
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-300">
+                        Our communities face significant challenges in reporting and addressing civic issues.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1: The Reporting Gap -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <img class="h-48 w-full object-cover rounded-md mb-4" src="https://cdn.daily-sun.com/public/news_images/2025/09/30/1759178544-8afd77630fb201150338b3b90febffb0.jpg" alt="Damaged road with potholes" onerror="this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+                        <h3 class="text-xl font-bold text-white">The Reporting Gap</h3>
+                        <p class="mt-2 text-gray-400">Many citizens face crimes, hazards, and civic issues but have no single, accessible platform to report them. This gap means countless incidents remain invisible to authorities.</p>
+                    </div>
+                    <!-- Card 2: Infrastructure Issues -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <img class="h-48 w-full object-cover rounded-md mb-4" src="https://themuslimtimes-bd.com//admin/newspicture/1752081533U.jpg" alt="Flooded street at night" onerror="this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+                        <h3 class="text-xl font-bold text-white">Widespread Infrastructure Issues</h3>
+                        <p class="mt-2 text-gray-400">The country faces persistent challenges like floods and fires. A lack of a unified system to map these problems in real-time makes it difficult to prioritize responses.</p>
+                    </div>
+                    <!-- Card 3: Broken Reporting Process -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <img class="h-48 w-full object-cover rounded-md mb-4" src="https://media.istockphoto.com/id/1293281911/video/frustrated-man-reading-bad-news-on-smart-phone.jpg?s=640x640&k=20&c=vpylTBIDKqGSWb0MEATfsXYdv5-G0C4ggLPkQbMxRAg=" alt="Illustration of a frustrated person" onerror="this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+                        <h3 class="text-xl font-bold text-white">Broken Reporting Process</h3>
+                        <p class="mt-2 text-gray-400">Traditional methods are often slow, bureaucratic, and lack transparency. Citizens cannot easily track their complaints, leading to frustration and a loss of trust.</p>
+                    </div>
+                    <!-- Card 4: Unreported Problems -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <img class="h-48 w-full object-cover rounded-md mb-4" src="https://t4.ftcdn.net/jpg/13/57/21/63/360_F_1357216384_kfGUFnq0y2zSu7ovomZPXj6zU5uLtjuR.jpg"this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+                        <h3 class="text-xl font-bold text-white">Unreported Problems</h3>
+                        <p class="mt-2 text-gray-400">Many issues, particularly local crimes or corruption, go unreported due to fear or complex procedures. This creates a "dark figure" of crime and dysfunction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section (Slide 10) -->
+        <section id="solution" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div class="mb-10 lg:mb-0">
+                        <img class="rounded-lg shadow-lg" src="https://wallpapers.com/images/hd/traffic-road-in-dhaka-rjwu1r9yzytxq2zn.jpg" alt="Busy city street at night" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            The Solution
+                        </h2>
+                        <p class="mt-6 text-xl text-gray-300">
+                            Civic-Snap is revolutionizing civic engagement by streamlining the reporting process for community issues.
+                        </p>
+                        <ul class="mt-4 space-y-2 text-lg text-gray-400">
+                            <li>- This intuitive app not only simplifies reporting but also ensures that problems are efficiently addressed by goverment agencies.</li>
+                            <li>- It acts as a tool for addressing social issues and to pressurize goverment agencies to solve them.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section (Slides 11-15) -->
+        <section id="how-it-works" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            How It Works
+                        </h2>
+                        <p class="mt-4 text-2xl text-gray-300">The 1 Minute Report</p>
+                        <div class="mt-8 space-y-6">
+                            <!-- Step 1: SNAP -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white text-xl font-bold">1</div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-white">SNAP</h3>
+                                    <p class="mt-1 text-gray-400">The user takes a quick photo or video of the issue at hand with just a tap of a button.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2: Describe -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white text-xl font-bold">2</div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-white">Describe</h3>
+                                    <p class="mt-1 text-gray-400">User describe the issue in our description box in a few words.</p>
+                                </div>
+                            </div>
+                            <!-- Step 3: Categories -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white text-xl font-bold">3</div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-white">Categories</h3>
+                                    <p class="mt-1 text-gray-400">By reading the description our AI will be able to automatically choose the right category or people can select it manually.</p>
+                                </div>
+                            </div>
+                            <!-- Step 4: SUBMIT -->
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white text-xl font-bold">4</div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-bold text-white">SUBMIT</h3>
+                                    <p class="mt-1 text-gray-400">Finally, the automatically created report is sent directly to the relevant department with location, such as City Corporation, without the user needing to navigate bureaucratic channels.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <img class="rounded-lg shadow-lg" src="https://images.contentstack.io/v3/assets/blt57caa63e0368f6e8/blt5955fa0489f90db4/622ace92638e130434842bfc/bsec_social.jpg" alt="Futuristic city illustration" onerror="this.src='https://placehold.co/600x700?text=Image+Not+Found'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section (Slide 16) -->
+        <section id="comparison" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+                    <!-- Column 1: Traditional Apps -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-6 lg:p-8">
+                        <img class="h-56 w-full object-cover rounded-md mb-4" src="https://img.freepik.com/premium-photo/upset-frustrated-indian-man-touching-his-head-living-room-interior_116547-96848.jpg" alt="Frustrated person with tangled thoughts" onerror="this.src='https://placehold.co/500x300?text=Image+Not+Found'">
+                        <h3 class="text-2xl font-bold text-white">Traditional Reporting Apps</h3>
+                        <p class="mt-4 text-gray-400">Traditional reporting apps require users to navigate complex forms and lengthy processes to submit issues. Citizens often abandon the task due to confusion, frustration, and the demand for detailed information, leading to underreporting of critical community problems.</p>
+                    </div>
+                    <!-- Column 2: Civic-Snap -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-6 lg:p-8 border-2 border-blue-500">
+                        <img class="h-56 w-full object-cover rounded-md mb-4" src="https://burnabyblacktop.ca/wp-content/uploads/2018/07/pothole-repair-vancouver.jpg" alt="Civic worker cleaning" onerror="this.src='https://placehold.co/500x300?text=Image+Not+Found'">
+                        <h3 class="text-2xl font-bold text-white">Civic-Snap</h3>
+                        <p class="mt-4 text-gray-400">Civic-Snap revolutionizes this process by allowing users to simply point and shoot, dramatically reducing the cognitive load. Our AI handles the bureaucratic intricacies, routing reports directly to the appropriate departments without user intervention, creating a seamless and efficient reporting experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section (Slide 17) -->
+        <section id="features" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div class="mb-10 lg:mb-0">
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            Core Features & Architecture
+                        </h2>
+                        <img class="rounded-lg shadow-lg mt-8" src="https://wallpapers.com/images/hd/technology-background-8d11qyyd6ptfh737.jpg" alt="Abstract technology background" onerror="this.src='https://placehold.co/500x400?text=Image+Not+Found'">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Feature 1 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h5a3 3 0 013 3v1" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Log In and Authentication</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M4 6h16M4 18h16" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Feed for raising voice</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Complaint Submission with AI</p>
+                        </div>
+                        <!-- Feature 4 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Complaint Tracking</p>
+                        </div>
+                        <!-- Feature 5 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Map For Hazard Alert and Help</p>
+                        </div>
+                        <!-- Feature 6 -->
+                        <div class="flex items-start bg-gray-900 p-4 rounded-lg">
+                            <svg class="h-8 w-8 text-blue-400 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <p class="ml-3 text-lg font-medium text-white">Advance AI Prediction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Users Section (Slide 18) -->
+        <section id="target-users" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            Target Users & Market
+                        </h2>
+                        <div class="mt-8 space-y-6">
+                            <div class="bg-gray-800 rounded-lg p-6">
+                                <h3 class="text-2xl font-bold text-white">Citizens with Smartphones</h3>
+                                <p class="mt-2 text-gray-400">Individuals who want to report issues quickly and see real change in their communities.</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-6">
+                                <h3 class="text-2xl font-bold text-white">Goverment Agencies</h3>
+                                <p class="mt-2 text-gray-400">City Corporations, Law Enforcement, Fire Services, public work departments, and disaster management who need an efficient, prioritized system for addressing civic issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <img class="rounded-lg shadow-lg" src="https://dims.apnews.com/dims4/default/d0365ed/2147483647/strip/true/crop/7511x5008+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Ffe%2F76%2Ff39d6caaed32f518f18a807ed09d%2Fed11393ec03e42b1bf6235eda015cf9f" alt="Citizen holding a protest sign" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section (Slides 19-23) -->
+        <section id="roadmap" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        Growth & Future Vision
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-300">
+                        Civic-Snap's roadmap for enhancing urban reporting and community engagement.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Phase 1 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <span class="text-blue-400 font-bold">Phase 1 (Now)</span>
+                        <p class="mt-2 text-gray-300">Prove the AI-reporting concept for 3-4 categories in Dhaka, validating the technology and gathering user feedback.</p>
+                    </div>
+                    <!-- Phase 2 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <span class="text-blue-400 font-bold">Phase 2 (B2G SaaS)</span>
+                        <p class="mt-2 text-gray-300">Develop and sell a premium SaaS Dashboard to goverment agencies, enabling real-time, AI-prioritized issue tracking for goverment officials.</p>
+                    </div>
+                    <!-- Phase 3 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <span class="text-blue-400 font-bold">Phase 3 (Gamification)</span>
+                        <p class="mt-2 text-gray-300">Introduce a "Civic Leaderboard" that rewards active citizens with points redeemable at local shops, fostering community involvement.</p>
+                    </div>
+                    <!-- Phase 4 -->
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+                        <span class="text-blue-400 font-bold">Phase 4 (Expansion)</span>
+                        <p class="mt-2 text-gray-300">Scale Civic-Snap to additional goverment agencies, broadening the reporting categories and AI involvement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics Section (Slides 25-29) -->
+        <section id="impact" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                        Impact Metrics (The 1Minute Revolution)
+                    </h2>
+                    <p class="mt-4 text-xl text-gray-300">
+                        Measuring the transformative effects of Civic-Snap on civic reporting.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Metric 1 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                        <div class="text-5xl font-extrabold text-blue-400">1 Minute</div>
+                        <p class="mt-3 text-lg text-gray-300">Report Submission Time Reduction</p>
+                    </div>
+                    <!-- Metric 2 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                        <div class="text-5xl font-extrabold text-blue-400">500%</div>
+                        <p class="mt-3 text-lg text-gray-300">Increase in Verified Civic Reports</p>
+                    </div>
+                    <!-- Metric 3 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                        <div class="text-5xl font-extrabold text-blue-400">40%</div>
+                        <p class="mt-3 text-lg text-gray-300">Reduction in Time-to-Repair for High-Priority Issues</p>
+                    </div>
+                    <!-- Metric 4 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                        <div class="text-4xl font-extrabold text-blue-400">Trust & Engagement</div>
+                        <p class="mt-3 text-lg text-gray-300">Enhanced Trust and Accountability between Citizens and Government</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section (Slide 31) -->
+        <section id="team" class="py-24 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div class="mb-10 lg:mb-0">
+                        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                            Team-CodeScobar
+                        </h2>
+                        <p class="mt-4 text-2xl text-gray-300">The minds behind CivicSnap</p>
+                        <img class="rounded-lg shadow-lg mt-8" src="https://img.freepik.com/premium-photo/create-vibrant-realistic-professional-photography-shot-modern-office-environment-showcasi_343960-121105.jpg?semt=ais_hybrid&w=740&q=80" alt="Modern office interior" onerror="this.src='https://placehold.co/500x300?text=Image+Not+Found'">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-900 p-4 rounded-lg text-center">
+                            <p class="text-lg font-medium text-white">Md. Shariar Islam Mrida</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg text-center">
+                            <p class="text-lg font-medium text-white">Khan Md. Maruf Hossain</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg text-center">
+                            <p class="text-lg font-medium text-white">Alvi Rahman</p>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-lg text-center">
+                            <p class="text-lg font-medium text-white">Tahira Islam Ruba</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Slide 33) -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white">
+                Thank You
+            </h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+                Civic-Snap is here to revolutionize the way we report civic issues. With our intuitive app, we empower citizens to take action in just seconds, fostering a stronger connection between communities and their governments.
+            </p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <img class="h-48 w-auto rounded-lg" src="https://t3.ftcdn.net/jpg/15/84/01/50/360_F_1584015059_JkLWXTrXndUYEy9xGDvcErZZnyJaWXq9.jpg" alt="Group of people holding thank you signs" onerror="this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+                <img class="h-48 w-auto rounded-lg" src="https://pksf.org.bd/wp-content/uploads/2025/02/DSC1953-scaled-2560x1097.jpg" alt="Group of people at a conference" onerror="this.src='https://placehold.co/400x300?text=Image+Not+Found'">
+            </div>
+            <p class="mt-8 text-base text-gray-400">
+                &copy; 2025 CivicSnap by Team-CodeScobar. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = menuBtn.querySelector('svg:first-child');
+            const closeIcon = menuBtn.querySelector('svg:last-child');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+
+            // --- Smooth Scrolling ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Only prevent default for internal links
+                    if (this.getAttribute('href').startsWith('#') && this.getAttribute('href').length > 1) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Calculate offset for sticky header
+                            const headerOffset = document.querySelector('header').offsetHeight;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // --- Active Nav Link Highlighting on Scroll ---
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            const headerHeight = document.querySelector('header').offsetHeight;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(a => {
+                            a.classList.remove('text-blue-400');
+                            a.classList.add('text-gray-300');
+                            if (a.getAttribute('href') === '#' + id) {
+                                a.classList.add('text-blue-400');
+                                a.classList.remove('text-gray-300');
+                            }
+                        });
+                    }
+                });
+            }, {
+                rootMargin: `-${headerHeight}px 0px 0px 0px`,
+                threshold: 0.3 // Adjust this value (0.0 to 1.0)
+            });
+
+            sections.forEach(section => {
+                if (section.id) { // Only observe sections with an ID
+                    observer.observe(section);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
