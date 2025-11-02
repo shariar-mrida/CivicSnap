@@ -36,7 +36,11 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Title -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-white">CivicSnap</a>
+                    <a href="#" class="flex items-center text-2xl font-bold text-white">
+                        <!-- Brand logo image on the left of text (reduced gap, balanced size) -->
+                        <img src="CivicSnapLogo.png" alt="CivicSnap logo" class="mr-1 h-16 w-16 object-contain" loading="eager" width="48" height="48" />
+                        <span>CivicSnap</span>
+                    </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -86,10 +90,14 @@
     <main>
         <!-- Hero Section (Slide 1) -->
         <section id="hero" class="relative bg-gray-800 hero-overlay" style="background-image: url('https://static01.nyt.com/images/2016/09/23/t-magazine/dhaka/dhaka-superJumbo.jpg?quality=75&auto=webp'); background-size: cover; background-position: center; background-attachment: fixed;">
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
-                    CivicSnap
-                </h1>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
+                <div class="inline-flex items-center justify-center space-x-1">
+                    <!-- Hero logo left of main title (local file only) -->
+                    <img src="CivicSnapLogo.png" alt="CivicSnap logo" class="h-16 w-16 md:h-32 md:w-32 object-contain" loading="eager" width="80" height="80" />
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+                        CivicSnap
+                    </h1>
+                </div>
                 <p class="mt-4 text-xl md:text-2xl text-gray-200 drop-shadow-md">
                     Transforming Citizen Reporting through AI-Powered Solutions
                 </p>
