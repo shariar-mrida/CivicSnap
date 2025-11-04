@@ -53,6 +53,8 @@
                         <a href="#features" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
                         <a href="#roadmap" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Roadmap</a>
                         <a href="#team" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Team</a>
+                        <!-- *** NEW: Launch App Button *** -->
+                        <a href="app.html" class="ml-4 bg-blue-600 text-white font-bold py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-colors">Launch Demo App</a>
                     </div>
                 </div>
 
@@ -83,6 +85,8 @@
                 <a href="#features" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Features</a>
                 <a href="#roadmap" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Roadmap</a>
                 <a href="#team" class="text-gray-300 hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors">Team</a>
+                <!-- *** NEW: Launch App Button for Mobile *** -->
+                <a href="app.html" class="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-bold text-center mt-2">Launch App</a>
             </div>
         </div>
     </header>
@@ -90,13 +94,13 @@
     <main>
         <!-- Hero Section (Slide 1) -->
         <section id="hero" class="relative bg-gray-800 hero-overlay" style="background-image: url('https://static01.nyt.com/images/2016/09/23/t-magazine/dhaka/dhaka-superJumbo.jpg?quality=75&auto=webp'); background-size: cover; background-position: center; background-attachment: fixed;">
-                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
                 <div class="inline-flex items-center justify-center space-x-1">
                     <!-- Hero logo left of main title (local file only) -->
                     <img src="CivicSnapLogo.png" alt="CivicSnap logo" class="h-16 w-16 md:h-32 md:w-32 object-contain" loading="eager" width="80" height="80" />
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
-                        CivicSnap
-                    </h1>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white drop-shadow-lg">
+                    CivicSnap
+                </h1>
                 </div>
                 <p class="mt-4 text-xl md:text-2xl text-gray-200 drop-shadow-md">
                     Transforming Citizen Reporting through AI-Powered Solutions
@@ -104,9 +108,15 @@
                 <p class="mt-2 text-lg md:text-xl text-gray-300 drop-shadow-md">
                     Bonded for a better Homeland
                 </p>
-                <a href="#about" class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors">
-                    Learn More
-                </a>
+                <!-- *** NEW: Updated Hero Buttons *** -->
+                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="app.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors shadow-lg">
+                        Launch Demo App
+                    </a>
+                    <a href="#about" class="inline-block bg-gray-700 text-white font-medium py-3 px-8 rounded-lg text-lg hover:bg-gray-600 transition-colors">
+                        Learn More
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -375,7 +385,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Impact Metrics Section (Slides 25-29) -->
         <section id="impact" class="py-24 bg-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -440,6 +450,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer (Slide 33) -->
@@ -463,6 +474,7 @@
 
     <!-- JavaScript for Mobile Menu and Smooth Scrolling -->
     <script>
+        // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
             
             // --- Mobile Menu Toggle ---
