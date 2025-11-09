@@ -26,6 +26,21 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
+
+        /* Hero background styling */
+        #hero {
+            background-image: url('https://static01.nyt.com/images/2016/09/23/t-magazine/dhaka/dhaka-superJumbo.jpg?quality=75&auto=webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll; /* Default for mobile */
+        }
+
+        /* Use fixed attachment only on larger screens for parallax effect */
+        @media (min-width: 1024px) { /* lg breakpoint */
+            #hero {
+                background-attachment: fixed;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -103,7 +118,7 @@
 
     <main>
         <!-- Hero Section  -->
-        <section id="hero" class="relative bg-gray-800 hero-overlay" style="background-image: url('https://static01.nyt.com/images/2016/09/23/t-magazine/dhaka/dhaka-superJumbo.jpg?quality=75&auto=webp'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <section id="hero" class="relative bg-gray-800 hero-overlay">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-48 text-center z-10">
                 <div class="inline-flex items-center justify-center space-x-1">
                     <!-- Hero logo left of main title (local file only) -->
